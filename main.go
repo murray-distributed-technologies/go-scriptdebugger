@@ -13,6 +13,9 @@ import (
 )
 
 func main() {
+	if len(os.Args) < 3 {
+		log.Fatalf("Missing arguments. Usage: go-scriptdebugger <rawtx> <lockingScript>")
+	}
 
 	/*lockingScript, err := bscript.NewFromASM("e8 OP_EQUAL")
 	if err != nil {
